@@ -1,10 +1,21 @@
+import React from 'react';
 import './App.css';
-function App() {
-  return (
-    <div className="App">
-     <h>Hello React</h>
-    </div>
-  );
+class App extends React.Component {
+  constructor(){
+    super();
+    console.log("console constructor");
+  }
+  render()
+  {
+    console.log("console render");
+    return (
+      
+      <div className="App">
+        
+       <h>Hello React</h>
+      </div>
+    );
+  }
 }
 
 export default App;
