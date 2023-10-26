@@ -5,7 +5,8 @@ export default class User extends Component {
     {
         super();
         this.state={
-            name:"Salman"
+            name:"Salman",
+            count:0
         }
         console.warn("constructor call")
     }
@@ -13,13 +14,19 @@ export default class User extends Component {
     {
         console.warn("componentDidMount call")
     }
+    componentDidUpdate(preProps, preState, snapshot){
+        console.warn("componentDidUpdate call",preState.count,this.state.count)
+        if(this.state.count === 3){
+            alert("State count is 3")
+        }
+    }
 
     render() {
         console.warn("render call")
     return (
       <div>
         <h1>User Component {this.state.name}</h1>
-        <button onClick={()=>{this.setState({name:"Shuvro"})}}>Update Name</button>
+        <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Name</button>
       </div>
     )
   }
