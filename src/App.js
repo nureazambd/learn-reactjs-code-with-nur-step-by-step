@@ -8,30 +8,18 @@ import { Button,Card,Dropdown  } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Reusecom from './components/Reusecom';
 import Table from 'react-bootstrap/Table';
+import Child from './components/Child';
 
 export default function App() {
-  const data = [
-    {name:'Salman',email:'salman@gmail.com',contact:[
-        {office:'098765',home:'0654321',personal:'012345'}
-    ]},
-    {name:'Paranto',email:'paranto@gmail.com',contact:[
-        {office:'098765',home:'0654321',personal:'012345'}
-    ]},
-    {name:'Ashiq',email:'ashiq@gmail.com',contact:[
-        {office:'098765',home:'0654321',personal:'012345'}
-    ]},
-    {name:'Hridoy',email:'hridoy@gmail.com',contact:[
-        {office:'098765',home:'0654321',personal:'012345'}
-    ]},
-    {name:'Shourov',email:'shourov@gmail.com',contact:[
-        {office:'098765',home:'0654321',personal:'012345'}
-    ]}
-]
+  const [name, setName] = useState("");
+  function display(name){
+    // alert(name)
+    setName(name)
+  }
   return (
     <div className="App">
-      <Table striped bordered hover>
-      <Reusecom student={data}/>
-      </Table>
+      <h1>App: {name}</h1>
+      <Child display={display}/>
     </div>
   )
 }
