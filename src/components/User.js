@@ -20,12 +20,19 @@ export default class User extends Component {
             alert("State count is 3")
         }
     }
+    shouldComponentUpdate(){
+        console.warn("shouldComponentUpdate", this.state.count)
+        if(this.state.count>=2 && this.state.count<5){
+            return true
+        }
+        
+    }
 
     render() {
         console.warn("render call")
     return (
       <div>
-        <h1>User Component {this.state.name}</h1>
+        <h1>User Component {this.state.count}</h1>
         <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Name</button>
       </div>
     )
