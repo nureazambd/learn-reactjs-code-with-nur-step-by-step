@@ -2,15 +2,14 @@ import React from 'react'
 import Table from 'react-bootstrap/Table';
 export default function Reusecom(props) {
   return (
-    <div>
+    <>
         <h1>Reusecom</h1>
-        <Table striped bordered hover>
       <thead>
         <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact</th>
         </tr>
       </thead>
       {props.student.map((item,index)=>
@@ -42,11 +41,7 @@ export default function Reusecom(props) {
       </tr>
     </tbody>
       )}
-      
-    </Table>
-
-
-    </div>
+    </>
 
   )
 }

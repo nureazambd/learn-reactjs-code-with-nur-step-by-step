@@ -7,6 +7,7 @@ import Student from './components/Student';
 import { Button,Card,Dropdown  } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Reusecom from './components/Reusecom';
+import Table from 'react-bootstrap/Table';
 
 export default function App() {
   const data = [
@@ -28,7 +29,9 @@ export default function App() {
 ]
   return (
     <div className="App">
+      <Table striped bordered hover>
       <Reusecom student={data}/>
+      </Table>
     </div>
   )
 }
