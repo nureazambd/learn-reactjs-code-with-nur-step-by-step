@@ -1,44 +1,38 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent} from 'react'
 
-export default class User extends Component {
-    // constructor()
-    // {
-    //     super();
-    //     this.state={
-    //         name:"Salman",
-    //         count:0
-    //     }
-    //     console.warn("constructor call")
-    // }
-    // componentDidMount()
-    // {
-    //     console.warn("componentDidMount call")
-    // }
-    // componentDidUpdate(preProps, preState, snapshot){
-    //     console.warn("componentDidUpdate call",preState.count,this.state.count)
-    //     if(this.state.count === 3){
-    //         alert("State count is 3")
-    //     }
-    // }
-    // shouldComponentUpdate(){
-    //     console.warn("shouldComponentUpdate", this.state.count)
-    //     if(this.state.count>=2 && this.state.count<5){
-    //         return true
-    //     }
+function dataHendle(){
+  this.setState({data:this.state.data+5})
+}
+class User extends PureComponent {
+    
+    constructor(){
+      super();
+      this.state={
+        count:0,
+        data:10
         
-    // }
-    componentWillUnmount(){
-        console.warn("componentWillUnmount called")
+      }
     }
 
+     dataHendle =()=>{
+      this.setState({data:this.state.data*5})
+    }
     render() {
-        console.warn("render call")
+      
+      console.log('render call')
     return (
       <div>
-        <h1>User component</h1>
-        {/* <h1>User Component {this.state.count}</h1> */}
-        {/* <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Name</button> */}
+        <h1>Count: {this.state.count}</h1>
+        <h1>Data: {this.state.data}</h1>
+
+        <button onClick={()=>this.setState({count:1})}>Count+</button>
+        {/* <button onClick={()=>this.setState({data:this.state.data*2})}>Data*</button> */}
+        <button onClick={this.dataHendle}>Data*</button>
+
+
       </div>
     )
   }
 }
+
+export default User;

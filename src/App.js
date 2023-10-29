@@ -11,15 +11,9 @@ import Table from 'react-bootstrap/Table';
 import Child from './components/Child';
 
 export default function App() {
-  const [name, setName] = useState("");
-  function display(name){
-    // alert(name)
-    setName(name)
-  }
   return (
     <div className="App">
-      <h1>App: {name}</h1>
-      <Child display={display}/>
+      <User/>
     </div>
   )
 }
