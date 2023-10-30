@@ -10,20 +10,15 @@ import Reusecom from './components/Reusecom';
 import Table from 'react-bootstrap/Table';
 import Child from './components/Child';
 
-export default function App() {
-  let userRef = useRef();
-  function clickChange(){
-    userRef.current.value='Salman'
-    userRef.current.style.color='red'
-    userRef.current.style.background='black'
-    
-    
-  }
+function App() {
   return (
     <div className="App">
-      <User ref={userRef}/>
-      <button onClick={clickChange}>Click</button>
+      <h1>App</h1>
+      <User />
     </div>
   )
 }
+
+
+export default App;
 
