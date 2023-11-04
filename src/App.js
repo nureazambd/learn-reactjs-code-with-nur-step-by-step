@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import NavBar from './components/NavBar';
 import Page404 from './components/Page404';
 import User from './components/User';
+import Filter from './components/Filter';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/filter' element={<Filter/>}/>
         <Route path='/*' element={<Page404/>}/>
         <Route path='/user/:name' element={<User/>}/>
         {/* <Route path='/*' element={<Navigate to="/"/>}/> */}

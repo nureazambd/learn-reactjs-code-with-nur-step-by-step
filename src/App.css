@@ -40,13 +40,19 @@
 .headerList{
   display: flex;
   list-style: none;
+  float: right;
+  
 }
 .liStyle{
   margin: 10px;
   text-decoration: none;
   text-decoration-line: none;
+  
+}
+.textColorNav{
+  color: black;
 }
 .headerList .active{
   color: white;
-  background-color: black;
+  background-color: skyblue;
 }
