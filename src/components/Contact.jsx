@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 export default function Contact() {
   const navigate = useNavigate();
   const clickToHome = ()=>{
@@ -19,8 +19,13 @@ export default function Contact() {
   return (
     <div>
         <h1>Contact</h1>
-        <button onClick={()=>{clickToHome()}}>Click to home</button>
-        <button onClick={()=>{clickToAbout('/about')}}>Click to about</button>
+        <ul>
+          <li><Link to='student'>Student</Link></li>
+          <li><Link to='emply'>Employ</Link></li>
+          <li><Link to='ceo'>CEO</Link></li>
+
+        </ul>
+        <Outlet/>
     </div>
   )
 }
