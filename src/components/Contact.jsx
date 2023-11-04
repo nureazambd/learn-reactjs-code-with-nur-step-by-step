@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom'
 export default function Contact() {
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location)
   const clickToHome = ()=>{
     let x = true
     if(x){
@@ -20,10 +22,9 @@ export default function Contact() {
     <div>
         <h1>Contact</h1>
         <ul>
-          <li><Link to='student'>Student</Link></li>
+          <li><Link to='student' state={{name:'noor',age:26}}>Student</Link></li>
           <li><Link to='emply'>Employ</Link></li>
           <li><Link to='ceo'>CEO</Link></li>
-
         </ul>
         <Outlet/>
     </div>
