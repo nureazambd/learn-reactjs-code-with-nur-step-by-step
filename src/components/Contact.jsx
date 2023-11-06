@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 export default function Contact() {
+  const navigator = useNavigate()
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +20,7 @@ export default function Contact() {
         console.log(resp);
       })
     })
+    navigator('/filter')
   }
   
   
