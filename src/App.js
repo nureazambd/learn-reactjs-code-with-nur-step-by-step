@@ -7,7 +7,6 @@ import About from './components/About';
 import Contact from './components/Contact';
 import NavBar from './components/NavBar';
 import Page404 from './components/Page404';
-import User from './components/User';
 import Filter from './components/Filter';
 import ContactStudent from './components/ContactStudent';
 import ContactEmploy from './components/ContactEmploy';
@@ -24,7 +23,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Protected Component={Home}/>}/>
         <Route path='/about' element={<Protected Component={About}/>}/>
-        {/* <Route path='/contact' element={<Contact/>}/> */}
         <Route path='/contact/' element={<Protected Component={Contact}/>}>
           <Route path='student' element={<ContactStudent/>}/>
           <Route path='emply' element={<ContactEmploy/>}/>
@@ -32,11 +30,7 @@ function App() {
         </Route>
         <Route path='/filter' element={<Protected Component={Filter}/>}/>
         <Route path='/*' element={<Page404/>}/>
-        <Route path='/user/:name' element={<Protected Component={User}/>}/>
         <Route path='/login' element={<Login/>}/>
-        {/* <Route path='/protedted' element={<Protected/>}/> */}
-        {/* <Route path='/*' element={<Navigate to="/"/>}/> */}
-
       </Routes>
       </BrowserRouter>
     </div>

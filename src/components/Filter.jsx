@@ -7,15 +7,29 @@ export default function Filter() {
     const [data, setData] = useState([]);
 
     useEffect(()=>{
-      fetch('https://jsonplaceholder.typicode.com/posts').then((result)=>{
+      handelDataView();
+    },[])
+
+    function handelDataView(){
+      fetch('http://localhost:3000/user').then((result)=>{
         result.json().then((resp)=>{
           // console.log(resp)
           setData(resp)
         })
       })
-    },[])
+    }
     console.log(data)
 
+    function deleteUser(id){
+      fetch(`http://localhost:3000/user/${id}`,{
+        method:'DELETE'
+      }).then((result)=>{
+        result.json().then((resp)=>{
+          console.log(resp)
+          handelDataView();
+        })
+      })
+    }
 
   return (
     <div>
@@ -28,17 +42,18 @@ export default function Filter() {
         
           <table border="1">
               <tr>
-                <td>userId</td>
                 <td>id</td>
-                <td>title</td>
-                <td>body</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Password</td>
               </tr>
             {data.map((item)=>
               <tr>
-              <td>{item.userId}</td>
-              <td>{item.id}</td>
-              <td>{item.title}</td>
-              <td>{item.body}</td>
+                <td>{item.id}</td>
+              <td>{item.name}</td>
+              <td>{item.email}</td>
+              <td>{item.password}</td>
+              <td><button onClick={()=>{deleteUser(item.id)}}>Delete</button></td>
             </tr>
             )}
 
